@@ -1,11 +1,11 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "ui": "tui",
+  "ui": "stream",
   "envMode": "loose",
   "tasks": {
     "build": {
-      "dependsOn": ["^build", "test"],
+      "dependsOn": ["^build", "test", "$TURBO_ROOT$#env:inject"],
       "outputs": [
         ".next/**",
         "!.next/cache/**",
@@ -33,6 +33,9 @@
       "cache": false
     },
     "//#clean": {
+      "cache": false
+    },
+    "env:inject": {
       "cache": false
     }
   }

@@ -10,6 +10,7 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "dev:web": "turbo dev --filter=web",
     "lint": "ultracite lint",
     "format": "ultracite format",
     "test": "turbo test",
@@ -19,7 +20,9 @@
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker",
     "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/design-system",
     "migrate": "cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
-    "clean": "git clean -xdf node_modules"
+    "clean": "git clean -xdf node_modules",
+    "env:inject": "npx tsx scripts/env.ts",
+    "env:login": "pnpm infisical login --domain https://vault.storency.io"
   },
   "devDependencies": {
     "@auto-it/first-time-contributor": "^11.3.0",
@@ -39,6 +42,7 @@
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@clack/prompts": "^0.11.0",
+    "@infisical/cli": "^0.41.85",
     "commander": "^14.0.0"
   },
   "type": "module"
