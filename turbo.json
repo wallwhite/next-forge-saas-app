@@ -29,6 +29,9 @@
       "dependsOn": ["^translate"],
       "cache": false
     },
+    "migrate": {
+      "cache": false
+    },
     "clean": {
       "cache": false
     },

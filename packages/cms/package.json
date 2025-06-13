@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "basehub dev",
-    "build": "basehub build",
+    "env:inject": "npx tsx ../../scripts/env.ts",
+    "dev": "pnpm run env:inject basehub dev",
+    "build": "pnpm run env:inject basehub build",
     "analyze": "basehub",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"

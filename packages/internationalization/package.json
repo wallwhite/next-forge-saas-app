@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "translate": "npx -y languine@latest translate",
+    "env:inject": "npx tsx ../../scripts/env.ts",
+    "translate": "pnpm run env:inject npx -y languine@latest translate",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },

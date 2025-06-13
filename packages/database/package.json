@@ -4,8 +4,10 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
-    "analyze": "prisma generate --no-hints --schema=./prisma/schema.prisma",
-    "build": "prisma generate --no-hints --schema=./prisma/schema.prisma",
+    "env:inject": "npx tsx ../../scripts/env.ts",
+    "migrate": "pnpm run env:inject npx prisma format && pnpm run env:inject npx prisma generate && pnpm run env:inject npx prisma db push",
+    "analyze": "pnpm run env:inject prisma generate --no-hints --schema=./prisma/schema.prisma",
+    "build": "pnpm run env:inject prisma generate --no-hints --schema=./prisma/schema.prisma",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },

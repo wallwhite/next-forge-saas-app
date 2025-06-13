@@ -14,12 +14,12 @@
     "lint": "ultracite lint",
     "format": "ultracite format",
     "test": "turbo test",
-    "analyze": "turbo analyze",
+    "analpyze": "turbo analyze",
     "translate": "turbo translate",
     "boundaries": "turbo boundaries",
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker",
     "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/design-system",
-    "migrate": "cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
+    "migrate": "turbo migrate",
     "clean": "git clean -xdf node_modules",
     "env:inject": "npx tsx scripts/env.ts",
     "env:login": "pnpm infisical login --domain https://vault.storency.io"
@@ -43,7 +43,8 @@
   "dependencies": {
     "@clack/prompts": "^0.11.0",
     "@infisical/cli": "^0.41.85",
-    "commander": "^14.0.0"
+    "commander": "^14.0.0",
+    "tsx": "^4.20.3"
   },
   "type": "module"
 }
